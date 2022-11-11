@@ -99,7 +99,9 @@ def checkTheCriteria(info):
             genres[i] = genres[i][1:]
 
     ratingCriteriaPassed = False
-    if (Global_Vars.rating == -1 or float(info['imdbRating']) < Global_Vars.rating):
+    if (info['imdbRating'] == 'N/A'):
+        ratingCriteriaPassed = True
+    elif (Global_Vars.rating == -1 or float(info['imdbRating']) < Global_Vars.rating):
         ratingCriteriaPassed = True
 
     genreCriteriaPassed = False
